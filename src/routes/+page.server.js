@@ -8,6 +8,6 @@ export const load = async ( event ) => {
 export const actions = {
     default: async ( event ) => {
         var data = await event.request.formData();
-        console.log(event.locals);
+        console.log(data.get('Teszt'));
     }
 }
