@@ -1,8 +1,13 @@
-import { user } from "$lib/server/db/schema";
-
-export const load = async ({ event }) => {
-    console.log(event);
+export const load = async ( event ) => {
+    console.log(event.locals);
     return {
         user: event.locals.user
     };
+}
+
+export const actions = {
+    default: async ( event ) => {
+        var data = await event.request.formData();
+        console.log(event.locals);
+    }
 }
